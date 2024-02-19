@@ -1,6 +1,6 @@
-import { Space } from 'src/buildings/models/space.model';
+import { ParkingSpace } from 'src/buildings/models/parking-space.model';
 
 export interface Floor {
   id: string;
-  spaces: Space[];
+  spaces: ParkingSpace[];
 }

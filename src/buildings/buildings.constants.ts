@@ -1,3 +1,4 @@
-export const SPACE_AVAILABILITIES = ['public', 'private'] as const;
+export const PARKING_SPACE_AVAILABILITIES = ['public', 'private'] as const;
 
-export type SpaceAvailability = (typeof SPACE_AVAILABILITIES)[number];
+export type ParkingSpaceAvailability =
+  (typeof PARKING_SPACE_AVAILABILITIES)[number];

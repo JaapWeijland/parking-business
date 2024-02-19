@@ -1,4 +1,4 @@
-const ERROR_CODES = ['session-not-found'] as const;
+const ERROR_CODES = ['parking-session-not-found'] as const;
 
 type ErrorCode = (typeof ERROR_CODES)[number];
 
