@@ -1,7 +1,9 @@
 import { Building } from 'src/buildings/models/building.model';
+import { IInMemoryStore } from 'src/persistence/interfaces/in-memory-store.interface';
 
-export interface IBuildingsPersistencyService {
-  get(id: string): Promise<Building>;
+export interface IBuildingsPersistencyService
+  extends IInMemoryStore<Building> {}
 
-  save(building: Omit<Building, 'id'>): Promise<Building>;
-}
+export const IBuildingsPersistencyService = Symbol(
+  'IBuildingsPersistencyService',
+);

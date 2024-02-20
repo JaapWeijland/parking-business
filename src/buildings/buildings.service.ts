@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import { ParkingSpaceAvailability } from 'src/buildings/buildings.constants';
 import { IBuildingsPersistencyService } from 'src/buildings/interfaces/buildings-persistency-service.interface';
 import { IBuildingsService } from 'src/buildings/interfaces/buildings-service.interface';
@@ -12,10 +12,17 @@ import { VehicleType } from 'src/vehicles/vehicles.constants';
 @Injectable()
 export class BuildingsService implements IBuildingsService {
   constructor(
+    @Inject(IBuildingsPersistencyService)
     private buildingsPersistencyService: IBuildingsPersistencyService,
+    @Inject(IFloorsPersistencyService)
     private floorsPersistencyService: IFloorsPersistencyService,
+    @Inject(IParkingSpacesPersistencyService)
     private parkingSpacesPersistencyService: IParkingSpacesPersistencyService,
   ) {}
+
+  async getAllBuildings(): Promise<Building[]> {
+    return this.buildingsPersistencyService.getAll();
+  }
 
   async createBuilding(args: { floors: Floor[] }): Promise<Building> {
     return this.buildingsPersistencyService.save({ floors: args.floors });
@@ -36,6 +43,7 @@ export class BuildingsService implements IBuildingsService {
   }
 
   async seed() {
+    console.log('Seeding...');
     const residentSpaces = await Promise.all(
       new Array(50).fill(null).map(() => {
         return this.createParkingSpace({
@@ -72,5 +80,6 @@ export class BuildingsService implements IBuildingsService {
     ]);
 
     await this.createBuilding({ floors: [floor1, floor2] });
+    console.log('Seeding done.');
   }
 }

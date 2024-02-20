@@ -1,4 +1,6 @@
 import { Floor } from 'src/buildings/models/floor.model';
-import { IInMemoryStore } from 'src/persistence/interfaces/in-memory-store.interface';
+import { InMemoryStore } from 'src/persistence/in-memory-store';
 
-export interface IFloorsPersistencyService extends IInMemoryStore<Floor> {}
+export interface IFloorsPersistencyService extends InMemoryStore<Floor> {}
+
+export const IFloorsPersistencyService = Symbol('IFloorsPersistencyService');

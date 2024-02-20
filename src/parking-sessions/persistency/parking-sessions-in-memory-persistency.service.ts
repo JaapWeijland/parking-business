@@ -6,4 +6,15 @@ import { InMemoryStore } from 'src/persistence/in-memory-store';
 @Injectable()
 export class ParkingSessionsInMemoryPersistencyService
   extends InMemoryStore<ParkingSession>
-  implements IParkingSessionsPersistencyService {}
+  implements IParkingSessionsPersistencyService
+{
+  async getLatestBySpaceId(spaceId: string): Promise<ParkingSession | null> {
+    const sessions = this._store
+      .filter((session) => session.spaceId === spaceId)
+      .sort((s1, s2) => {
+        return s2.startTime.valueOf() - s1.startTime.valueOf();
+      });
+
+    return sessions[0] ?? null;
+  }
+}

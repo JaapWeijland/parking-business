@@ -1,13 +1,38 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Get, Inject, Post } from '@nestjs/common';
 import { CheckInDto } from 'src/parking-sessions/dtos/check-in.dto';
-import { ParkingSessionsService } from 'src/parking-sessions/parking-sessions.service';
+import { CheckOutDto } from 'src/parking-sessions/dtos/check-out.dto';
+import { IParkingSessionsService } from 'src/parking-sessions/interfaces/parking-sessions-service.interface';
 
 @Controller('parking-sessions')
 export class ParkingSessionsController {
-  constructor(private parkingSessionsService: ParkingSessionsService) {}
+  constructor(
+    @Inject(IParkingSessionsService)
+    private parkingSessionsService: IParkingSessionsService,
+  ) {}
+
+  @Get()
+  public async getAll() {
+    const sessions = await this.parkingSessionsService.getAll();
+
+    return sessions;
+  }
 
   @Post('check-in')
   public async checkIn(@Body() checkInDto: CheckInDto) {
-    await this.parkingSessionsService.checkIn(checkInDto);
+    const session = await this.parkingSessionsService.checkIn({
+      vehicleType: checkInDto.vehicleType,
+      isResident: checkInDto.isResident,
+    });
+
+    return session;
+  }
+
+  @Post('check-out')
+  public async checkOut(@Body() checkOutDto: CheckOutDto) {
+    const session = await this.parkingSessionsService.checkOut({
+      parkingSessionId: checkOutDto.parkingSessionId,
+    });
+
+    return session;
   }
 }

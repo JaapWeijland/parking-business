@@ -11,4 +11,8 @@ export interface IBuildingsService {
     availableFor: ParkingSpaceAvailability;
     vehicleTypes: VehicleType[];
   }): Promise<ParkingSpace>;
+  seed(): Promise<void>;
+  getAllBuildings(): Promise<Building[]>;
 }
+
+export const IBuildingsService = Symbol('IBuildingsService');
