@@ -1,4 +1,4 @@
-import { CommonError } from 'src/common/common.error';
+import { CommonError } from '@common/common.error';
 
 const ERROR_CODES = [
   'parking-session-not-found',

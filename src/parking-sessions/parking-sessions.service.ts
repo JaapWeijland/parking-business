@@ -1,11 +1,11 @@
+import { IBuildingsPersistencyService } from '@buildings/interfaces/buildings-persistency-service.interface';
+import { ParkingSpace } from '@buildings/models/parking-space.model';
 import { Inject, Injectable } from '@nestjs/common';
-import { IBuildingsPersistencyService } from 'src/buildings/interfaces/buildings-persistency-service.interface';
-import { ParkingSpace } from 'src/buildings/models/parking-space.model';
-import { IParkingSessionsPersistencyService } from 'src/parking-sessions/interfaces/parking-sessions-persistency-service.interface';
-import { IParkingSessionsService } from 'src/parking-sessions/interfaces/parking-sessions-service.interface';
-import { ParkingSession } from 'src/parking-sessions/models/parking-session.model';
-import { ParkingSessionsError } from 'src/parking-sessions/parking-sessions.error';
-import { VehicleType } from 'src/vehicles/vehicles.constants';
+import { IParkingSessionsPersistencyService } from '@parking-sessions/interfaces/parking-sessions-persistency-service.interface';
+import { IParkingSessionsService } from '@parking-sessions/interfaces/parking-sessions-service.interface';
+import { ParkingSession } from '@parking-sessions/models/parking-session.model';
+import { ParkingSessionsError } from '@parking-sessions/parking-sessions.error';
+import { VehicleType } from '@vehicles/vehicles.constants';
 
 @Injectable()
 export class ParkingSessionsService implements IParkingSessionsService {
@@ -80,7 +80,7 @@ export class ParkingSessionsService implements IParkingSessionsService {
     return availableSpace;
   }
 
-  private async isParkingSpaceAvailable(
+  public async isParkingSpaceAvailable(
     parkingSpaceId: string,
   ): Promise<boolean> {
     const latestSession =

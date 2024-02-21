@@ -1,7 +1,7 @@
+import { IBuildingsPersistencyService } from '@buildings/interfaces/buildings-persistency-service.interface';
+import { Building } from '@buildings/models/building.model';
 import { Injectable } from '@nestjs/common';
-import { IBuildingsPersistencyService } from 'src/buildings/interfaces/buildings-persistency-service.interface';
-import { Building } from 'src/buildings/models/building.model';
-import { InMemoryStore } from 'src/persistence/in-memory-store';
+import { InMemoryStore } from '@persistence/in-memory-store';
 
 @Injectable()
 export class BuildingsInMemoryPersistencyService

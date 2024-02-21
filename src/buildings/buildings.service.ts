@@ -1,13 +1,13 @@
+import { ParkingSpaceAvailability } from '@buildings/buildings.constants';
+import { IBuildingsPersistencyService } from '@buildings/interfaces/buildings-persistency-service.interface';
+import { IBuildingsService } from '@buildings/interfaces/buildings-service.interface';
+import { IFloorsPersistencyService } from '@buildings/interfaces/floors-persistency-service.interface';
+import { IParkingSpacesPersistencyService } from '@buildings/interfaces/parking-spaces-persistency-service.interface';
+import { Building } from '@buildings/models/building.model';
+import { Floor } from '@buildings/models/floor.model';
+import { ParkingSpace } from '@buildings/models/parking-space.model';
 import { Inject, Injectable } from '@nestjs/common';
-import { ParkingSpaceAvailability } from 'src/buildings/buildings.constants';
-import { IBuildingsPersistencyService } from 'src/buildings/interfaces/buildings-persistency-service.interface';
-import { IBuildingsService } from 'src/buildings/interfaces/buildings-service.interface';
-import { IFloorsPersistencyService } from 'src/buildings/interfaces/floors-persistency-service.interface';
-import { IParkingSpacesPersistencyService } from 'src/buildings/interfaces/parking-spaces-persistency-service.interface';
-import { Building } from 'src/buildings/models/building.model';
-import { Floor } from 'src/buildings/models/floor.model';
-import { ParkingSpace } from 'src/buildings/models/parking-space.model';
-import { VehicleType } from 'src/vehicles/vehicles.constants';
+import { VehicleType } from '@vehicles/vehicles.constants';
 
 @Injectable()
 export class BuildingsService implements IBuildingsService {
@@ -63,7 +63,7 @@ export class BuildingsService implements IBuildingsService {
     );
 
     const publicMotorSpaces = await Promise.all(
-      new Array(80).fill(null).map(() => {
+      new Array(20).fill(null).map(() => {
         return this.createParkingSpace({
           availableFor: 'public',
           vehicleTypes: ['motor'],

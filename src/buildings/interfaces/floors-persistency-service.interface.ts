@@ -1,5 +1,5 @@
-import { Floor } from 'src/buildings/models/floor.model';
-import { InMemoryStore } from 'src/persistence/in-memory-store';
+import { Floor } from '@buildings/models/floor.model';
+import { InMemoryStore } from '@persistence/in-memory-store';
 
 export interface IFloorsPersistencyService extends InMemoryStore<Floor> {}
 

@@ -1,7 +1,7 @@
+import { IParkingSpacesPersistencyService } from '@buildings/interfaces/parking-spaces-persistency-service.interface';
+import { ParkingSpace } from '@buildings/models/parking-space.model';
 import { Injectable } from '@nestjs/common';
-import { IParkingSpacesPersistencyService } from 'src/buildings/interfaces/parking-spaces-persistency-service.interface';
-import { ParkingSpace } from 'src/buildings/models/parking-space.model';
-import { InMemoryStore } from 'src/persistence/in-memory-store';
+import { InMemoryStore } from '@persistence/in-memory-store';
 
 @Injectable()
 export class ParkingSpacesInMemoryPersistencyService

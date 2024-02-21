@@ -16,6 +16,14 @@
     "noImplicitAny": true,
     "strictBindCallApply": true,
     "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "paths": {
+      "@buildings/*": ["src/buildings/*"],
+      "@common/*": ["src/common/*"],
+      "@financials/*": ["src/financials/*"],
+      "@parking-sessions/*": ["src/parking-sessions/*"],
+      "@vehicles/*": ["./src/vehicles/*"],
+      "@persistence/*": ["src/persistence/*"]
+    }
   }
 }
