@@ -1,0 +1,161 @@
+{
+	"info": {
+		"_postman_id": "5062e6e8-c199-48a0-916e-5b174f47ab4a",
+		"name": "ParkingBusiness",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "897627"
+	},
+	"item": [
+		{
+			"name": "Seed",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/buildings/seed",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"buildings",
+						"seed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Buildings",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/buildings",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"buildings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Statistics",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/buildings",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"buildings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check In",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"vehicleType\": \"car\",\n    \"isResident\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}/parking-sessions/check-in",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"parking-sessions",
+						"check-in"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check Out",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"parkingSessionId\": \"085e7161-7d2d-4e11-9e04-ffb32567d22d\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{HOST}}/parking-sessions/check-out",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"parking-sessions",
+						"check-out"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Parking Sessions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{HOST}}/parking-sessions/",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"parking-sessions",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "HOST",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}
