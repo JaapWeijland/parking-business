@@ -4,7 +4,7 @@ As part of the assignment, a couple of User Stories and Technical Work will be l
 
 ## A note on the result
 
-- I spent about 12 hours on this assignment and I wasn't near implementing all things I wanted to implement. Some things that I only implemented on a basic level due to time constraints were: tests, algorithm improvements (even though I'm not the best at algorithms), implementing a real database, CI/CD, deployment.
+- I spent about 12 hours on this assignment and I wasn't near implementing all things I wanted to implement. Some things that I only implemented on a basic level due to time constraints were: tests, algorithm improvements (even though I'm not the best at algorithms), implementing a real database, CI/CD.
 - Usually I would have added new functionality through small commits. Small commits make sure that bugs are pinpointed easier, decreases test time (if CI is setup correctly), will decrease the chance of merge conflicts and will bring the code in the hands of co-developers earlier. Since these are all CI or teamwork related, it wouldn't make sense to apply this way of working for this assignment.
 
 ## User Stories
