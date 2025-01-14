@@ -5,7 +5,7 @@
 [circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
 [circleci-url]: https://circleci.com/gh/nestjs/nest
 
-  <p align="center">This is a project built as an application assignment foor BridgeFund. The test was taken by Jaap Weijland. To implement the requirements, the Node.JS framework Nest is used.</p>
+  <p align="center">This is a project built as an application assignment to test my backend skills. The test was taken by Jaap Weijland. To implement the requirements, the Node.JS framework Nest is used.</p>
 
 ## Installation
 
